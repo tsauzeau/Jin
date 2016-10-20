@@ -18,12 +18,12 @@ __version__ = '0.1.0'
 
 TRANSLATIONS = {
     # Commands
-    u'chauffe': u'run',
+    u'chinois': u'run',
     u'fais': u'exec',
-    u'pousse': u'push',
+    u'pecho': u'push',
     u'apporte': u'pull',
     u'bûches': u'logs',
-    u'grève': u'suspend',
+    u'tagueule': u'suspend',
     u'matuer': u'kill',
     u'perquisitionne': u'inspect',
     u'construis': 'build',
@@ -33,7 +33,7 @@ TRANSLATIONS = {
     u'insee': 'stats',
     u'rtt': 'pause',
     u'sur-ecoute': u'attach',
-    u'cederoms': u'images',
+    u'tinder': u'images',
     u'vos-papiers': 'login',
     u'déchéance': 'logout',
     u'sauvegarde': 'save',
@@ -47,7 +47,7 @@ TRANSLATIONS = {
     u'marseille': u'port',
     u'renomme': u'rename',
     u'auboulot': u'unpause',
-    u'barrage': u'wait',
+    u'drain': u'wait',
     # Options
     u'--aide': '--help',
     u'--graffiti': '--tag',
@@ -98,8 +98,8 @@ def use_marcelfile(command):
     if such an argument was not already passed.
     """
     curdir = os.getcwd()
-    marcelfile_path = join(curdir, u'RecetteÀMarcel')
-    dockerfile_path = join(curdir, u'.RecetteÀMarcel.Dockerfile')
+    marcelfile_path = join(curdir, u'RecetteÀJin')
+    dockerfile_path = join(curdir, u'.RecetteÀJin.Dockerfile')
     if not exists(marcelfile_path) or '-f' in command:
         return command
 
@@ -112,7 +112,7 @@ def use_marcelfile(command):
         if six.PY2:  # pragma: no cover
             translated_marcelfile = translated_marcelfile.encode('utf-8')
         dockefile.write(translated_marcelfile)
-    command = command[:2] + ['-f', u'./.RecetteÀMarcel.Dockerfile'] + command[2:]
+    command = command[:2] + ['-f', u'./.RecetteÀJin.Dockerfile'] + command[2:]
     return command
 
 
